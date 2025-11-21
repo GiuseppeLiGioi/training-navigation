@@ -1,9 +1,29 @@
-import { Text, View } from "react-native";
+import { FlatList } from "react-native";
+import DishCard from "./DishCard";
 
-export default function DishesList({ dishes }) {
+type Dish = {
+  id: number;
+  categoryId: number;
+  name: string;
+  description: string;
+  image: string;
+};
+
+type DishesProps = {
+  dishes: Dish[];
+};
+export default function DishesList({ dishes }: DishesProps) {
   return (
-    <View>
-      <Text>sono DishesList</Text>
-    </View>
+    <FlatList
+      data={dishes}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={(itemData) => (
+        <DishCard
+          imageUrl={itemData.item.image}
+          nameDish={itemData.item.name}
+          description={itemData.item.description}
+        />
+      )}
+    />
   );
 }

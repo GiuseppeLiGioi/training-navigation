@@ -1,5 +1,11 @@
 import { styles } from "@/styles/common";
-import { View } from "react-native";
-export default function DishCard() {
-  return <View style={styles.containerDishCard}></View>;
+import { Image, View } from "react-native";
+export default function DishCard({ imageUrl, nameDish, description }) {
+  return (
+    <View style={styles.containerDishCard}>
+      <View>
+        <Image source={imageUrl} />
+      </View>
+    </View>
+  );
 }
