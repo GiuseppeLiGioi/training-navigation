@@ -1,9 +1,10 @@
-import { Text, View } from "react-native";
-
+import DishesList from "@/components/my/DishsList";
+import { DISHES } from "@/data/dishes";
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function Dishes() {
   return (
-    <View>
-      <Text>sono Dishes</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <DishesList dishes={DISHES} />
+    </SafeAreaView>
   );
 }
