@@ -10,11 +10,7 @@ const NavigateContext = createContext<NavigateContextType>({
   setCategoryId: () => {},
 });
 
-export const SelectedCategoryProvider = ({
-  children,
-}: {
-  children: ReactNode;
-}) => {
+export const NavigateProvider = ({ children }: { children: ReactNode }) => {
   const [categoryId, setCategoryId] = useState<number | null>(null);
 
   return (

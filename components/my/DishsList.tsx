@@ -1,4 +1,4 @@
-import { useSearchParams } from "expo-router";
+import { useNavigateContext } from "@/contexts/NavigateContext";
 import { FlatList } from "react-native";
 import DishCard from "./DishCard";
 
@@ -14,8 +14,7 @@ type DishesProps = {
   dishes: Dish[];
 };
 export default function DishesList({ dishes }: DishesProps) {
-  const params = useSearchParams();
-  const categoryId = Number(params.categoryId);
+  const { categoryId } = useNavigateContext();
   const dishesToRender = dishes.filter((d) => d.categoryId === categoryId);
   return (
     <FlatList

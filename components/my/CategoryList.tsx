@@ -1,3 +1,4 @@
+import { useNavigateContext } from "@/contexts/NavigateContext";
 import { Category } from "@/models/Category";
 import { styles } from "@/styles/common";
 import { useRouter } from "expo-router";
@@ -9,6 +10,7 @@ type Props = {
 
 export default function CategoryList({ categories }: Props) {
   const router = useRouter();
+  const { setCategoryId } = useNavigateContext();
   return (
     <View style={{ flex: 1 }}>
       <FlatList
@@ -18,7 +20,10 @@ export default function CategoryList({ categories }: Props) {
         renderItem={(itemData) => (
           <Pressable
             android_ripple={{ color: "#727272ff" }}
-            onPress={() => router.push("/dishes")}
+            onPress={() => {
+              setCategoryId(itemData.item.id);
+              router.push("/dishes");
+            }}
             style={({ pressed }) => [
               styles.containerOuterCategory,
               {
