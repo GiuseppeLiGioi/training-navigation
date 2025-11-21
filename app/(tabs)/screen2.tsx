@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 
-export default function HomeScreen() {
+export default function Screen2() {
   return (
     <View>
       <Text>
-        sono HomeScreen
+        sono Screen2
       </Text>
     </View>
   );
