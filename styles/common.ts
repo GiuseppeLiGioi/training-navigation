@@ -27,4 +27,14 @@ export const styles = StyleSheet.create({
   pressed: {
     backgroundColor: "#5e5d5dff",
   },
+
+  containerDishCard: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  containerDishImage: {},
+  imageDish: {},
+  containerDishInfo: {},
+  DishInfo: {},
 });
