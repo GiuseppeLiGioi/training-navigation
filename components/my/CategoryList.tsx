@@ -27,7 +27,8 @@ export default function CategoryList({ categories }: Props) {
             style={({ pressed }) => [
               styles.containerOuterCategory,
               {
-                backgroundColor: pressed ? "#130f0fff" : itemData.item.color,
+                backgroundColor: itemData.item.color,
+                opacity: pressed ? 0.7 : 1,
               },
             ]}
           >
