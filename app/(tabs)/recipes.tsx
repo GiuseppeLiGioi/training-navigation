@@ -1,12 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function Screen2() {
+export default function DishRecipeses() {
   return (
     <View>
-      <Text>
-        sono Screen2
-      </Text>
+      <Text>sono Recipes</Text>
     </View>
   );
 }
-
