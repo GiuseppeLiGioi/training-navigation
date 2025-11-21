@@ -1,18 +1,16 @@
 import { Category } from "@/models/Category";
 import { styles } from "@/styles/common";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { FlatList, Pressable, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 type Props = {
   categories: Category[];
 };
 
 export default function CategoryList({ categories }: Props) {
-  const navigation = useNavigation();
   const router = useRouter();
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <FlatList
         data={categories}
         style={{ flex: 1 }}
@@ -35,6 +33,6 @@ export default function CategoryList({ categories }: Props) {
         )}
         keyExtractor={(item) => item.id.toString()}
       />
-    </SafeAreaView>
+    </View>
   );
 }
