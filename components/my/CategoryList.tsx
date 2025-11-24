@@ -22,7 +22,7 @@ export default function CategoryList({ categories }: Props) {
             android_ripple={{ color: "#727272ff" }}
             onPress={() => {
               setCategoryId(itemData.item.id);
-              router.navigate("/dishes");
+              router.push("/dishes");
             }}
             style={({ pressed }) => [
               styles.containerOuterCategory,
