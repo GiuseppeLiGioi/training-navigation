@@ -24,7 +24,7 @@ export default function DishesList({ dishes }: DishesProps) {
       keyExtractor={(item) => item.id.toString()}
       renderItem={(itemData) => (
         <Pressable
-          onPress={() => router.push("/recipes")}
+          onPress={() => router.navigate("/recipes")}
           style={({ pressed }) => [{ opacity: pressed ? 0.7 : 1 }]}
         >
           <DishCard
